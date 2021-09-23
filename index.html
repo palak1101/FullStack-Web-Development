@@ -6,24 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FullStack-Track</title>
     <style>
-        div{
-            background-color: yellow;        /*block-level-element*/
-            width: 400px;
-            height: 300px;
+        .background{
+            background: aqua;
+            margin: 10px;
         }
 
-        span{
-            background-color: lightgray;     /*inline-element*/
-            width: 400px;
-            height: 300px;
+        .example{
+            background: cornflowerblue;
+            width: 300px;
+            height: 100px;
+            /* box-sizing: content-box;  by default*/
+            box-sizing: border-box;
+            margin: 10px;
+            /* padding-left: 30px;
+            padding-right: 10px;
+            padding-top: 50px;
+            padding-bottom: 10px; */
+            padding: 50px 10px 10px 30px;
+            border: 5px solid black;
         }
     </style>
 </head>
 
 <body>
-    <div>I'm a div</div>
-    <span>I'm a span</span>
 
+    <!--Every element is a box-->
+    <div class="background">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus reprehenderit fugit pariatur veritatis iusto, odio at culpa eius vel minus laborum quos blanditiis, cupiditate dolores, officia voluptates aut veniam esse error molestiae molestias voluptatum exercitationem. Aliquam exercitationem minima quae praesentium, harum odit aliquid ipsa necessitatibus ullam velit eos eligendi dolorum?</p>
+    </div>
+
+    <span class="background">I'm a span</span>
+
+    <table class="background">
+        <tr>
+            <td>One</td>
+            <td>Two</td>
+        </tr>
+
+        <tr>
+            <td>Three</td>
+            <td>Four</td>
+        </tr>
+    </table>
+
+    <a href="#" class="background">link</a>
+
+    <b class="background">Bold</b>
+
+    <!--Example of Box-Model-->
+    <div>
+        <h1 class="example">Lorem, ipsum</h1>
+    </div>
+
+
+    
 </body>
 
 </html>
