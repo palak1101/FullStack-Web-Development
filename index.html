@@ -13,40 +13,71 @@
             box-sizing: border-box;
         }
 
-        div.parent-1 div{
-            background-color: green;
-            color: white;
+        .parent{
+            background-color: black;
+            height: 753px;
         }
 
-        .parent-1 h1{
+        .child-1{
+            background-color: #ffbf00;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            /* transform: scale(0.5); */
+            /* transform: translate(100px); */
+
+        }
+
+        .child-2{
+            background-color: #ffbf00;
+            width: 100px;
+            height: 100px;
+            margin: 100px;
+            border-radius: 50%;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+        }
+
+        .child-3{
+            background-color: #ffbf00;
+            width: 100px;
+            height: 100px;
+            margin-left: 200px;
+            border-radius: 50%;
+            transition-duration: 8.5s;
+            transition-timing-function: cubic-bezier(0, 1.29, 0,-0.29);
+        }
+
+        .child-1:hover{
+            background-color: red;
+            cursor: pointer;
+            transform: rotateY(90deg);
+        }
+
+        .child-2:hover{
             background-color: cyan;
+            cursor: pointer;
+            transform: scale(0.5);
         }
 
-        .parent-2 div:nth-child(2){
+        .child-3:hover{
             background-color: blueviolet;
-            color: white;
+            cursor: pointer;
+            transform: translateX(1000px);
+            /* transition-timing-function: cubic-bezier(0, 1.29, 0,-0.29); */
         }
+       
 
     </style>
 </head>
 
 <body>
-    <div class="parent-1">
-        <div>I'm a div</div>
-        <h1>I'm a heading</h1>
-        <h2>I'm a heading</h2>
-        <h1>I'm a heading</h1>
-        <h2>I'm a heading</h2>
-        <h1>I'm a heading</h1>
-        <div>I'm a div</div>
-    </div>
-
-    <br><br>
-    
-    <div class="parent-2">
-        <div>I'm a heading</div>
-        <div>I'm a heading</div>
-        <div>I'm a heading</div>
+    <div class="parent">
+        <div class="child-1"></div>
+        <div class="child-2"></div>
+        <div class="child-3"></div>
     </div>
 </body>
 
