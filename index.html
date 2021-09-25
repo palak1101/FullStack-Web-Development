@@ -1,43 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FullStack-Track</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 4px;
             box-sizing: border-box;
         }
 
-        .background{
+        div.parent-1 div{
+            background-color: green;
             color: white;
         }
 
-        h1.background{
-            background: palevioletred;
+        .parent-1 h1{
+            background-color: cyan;
         }
 
-        h2.background#unique{
-            background-color: black;
+        .parent-2 div:nth-child(2){
+            background-color: blueviolet;
+            color: white;
         }
-
-        h3.background{
-            background-color: green;
-        }
-
 
     </style>
 </head>
+
 <body>
-    <h1 style="background-color: blueviolet;">Heading 1</h1>
-    <h2 style="background-color: cyan;">Heading 2</h2>
-    <h3 style="background-color: #ffbf00;">Heading 3</h3>
-    <hr><br>
-    <h1 class="background">Heading 1</h1>
-    <h2 id="unique" class="background">Heading 2</h2>
-    <h3 class="background">Heading 3</h3>
+    <div class="parent-1">
+        <div>I'm a div</div>
+        <h1>I'm a heading</h1>
+        <h2>I'm a heading</h2>
+        <h1>I'm a heading</h1>
+        <h2>I'm a heading</h2>
+        <h1>I'm a heading</h1>
+        <div>I'm a div</div>
+    </div>
+
+    <br><br>
+    
+    <div class="parent-2">
+        <div>I'm a heading</div>
+        <div>I'm a heading</div>
+        <div>I'm a heading</div>
+    </div>
 </body>
+
 </html>
