@@ -13,18 +13,21 @@
         }
 
         .parent{
-            height: 500px;
+            height: 753px;
             background-color: black;
             position: relative;
             display: flex;
             /* flex-direction: row-reverse; */
-            justify-content: center;
-            align-items: center;
+            /* justify-content: center; */
+            /* align-items: center; */
+            justify-content: space-around;
+            align-items: stretch;
+            flex-wrap: wrap;
         }
 
         .child{
             width: 100px;
-            height: 150px;
+            min-height: 150px;
             /* display: inline-block; */
             background-color: orange;
             margin: 10px;
@@ -44,6 +47,12 @@
         <div style="background-color: greenyellow" class="child"></div>
         <div style="background-color: yellow" class="child"></div>
         <!-- <div class="second_child"></div> -->
+        <div style="background-color: plum" class="child"></div>
+        <div style="background-color: greenyellow" class="child"></div>
+        <div style="background-color: yellow" class="child"></div>
+        <div style="background-color: plum" class="child"></div>
+        <div style="background-color: greenyellow" class="child"></div>
+        <div style="background-color: yellow" class="child"></div>
     </div>
 </body>
 </html>
