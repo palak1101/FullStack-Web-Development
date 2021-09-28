@@ -2,19 +2,19 @@
 // console.warn("Warning...")
 // console.error("Error!!!")
 
-//3 Datatypes (Primitive)
-//Strings
-console.log(typeof "starlight")
-console.log(typeof 'd')
+var age=20
+console.log(age)
 
+//definition of var not assigned any value hence   assigned undefined by default
+var new_age           
+console.log(typeof new_age)
 
-//Numbers- only numerical datatype
-console.log(typeof 11)
-console.log(typeof 0.22)
-console.log(typeof 4562212358968482)
-console.log(typeof -9)
+var age2=null
+console.log(typeof age2)
 
+var age3
+console.log(typeof age3)
 
-//Boolean
-console.log(true)
-console.log(typeof false)
+//Reference Error
+var age1
+console.log(Name)
