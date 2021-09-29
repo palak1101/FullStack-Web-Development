@@ -1,66 +1,25 @@
-//Non-Primitive Datatype - Array
-var arr = [1,2,3,4]
-console.log(arr)
-console.log(typeof arr)
-console.log(arr.length)
+// document. -object
 
-arr.push(5)
-console.log(arr)
-console.log(arr.length)
+// var heading = document.getElementById('heading')
+// console.log(heading)     you're tring to access element that hasn't been declared before script tag, hence it couldn't recognize it.
 
-// To define a variable as constant
-// const age = 20
-// age = 22
-// console.log(age)
+// var heading = document.getElementById('heading')
+// console.log(heading)
+// heading.innerHTML = "Hi from JS"
+// console.log(typeof heading) 
 
-//Operators
-//Arithmetic
-var a = 4
-var b = 8
+var heading = document.getElementById('heading')
+var para = document.getElementsByClassName('para')
+var tags = document.getElementsByTagName('a')
+var query = document.querySelector('#heading')
 
-console.log('a+b=', a+b)
-console.log('a-b=', a-b)
-console.log('a*b=', a*b)
-console.log('a/b=', a/b)
-console.log('a**b=', a**b)
-console.log('b%a=', b%a)
+console.log(heading)
+console.log(para)
+console.log(para.length)
+console.log(para[0])
+console.log(para[1])
+console.log(tags)
+console.log(query)
 
-//Assignment
-console.log('b ', b)
-b += 10
-console.log('b+=10 =', b)
-
-b--
-console.log('b-- =', b)
-
-// var c = 10
-// console.log(++c) o/p - 11
-// console.log(c++)       - 10
-// console.log(c)         - 11
-
-//Comparison
-var d = 10
-var e = 2
-var f = '10'
-console.log(d>e)
-console.log(d<=e)
-console.log(d==e)
-
-//console.log(d == f) o/p - true  how? f is character while d is number
-console.log(d === f)
-
-//Logical
-//1.AND
-console.log('true && true: ', true && true)
-console.log('false && true: ', false && true)
-console.log('true && false: ', true && false)
-console.log('false && false: ', false && false)
-
-//2.OR
-console.log('true || true: ', true || true)
-console.log('false || true: ', false || true)
-console.log('true || false: ', true || false)
-console.log('false || false: ', false || false)
-
-
+//para.push('star')
 
