@@ -1,38 +1,66 @@
-//Shorthands of arrow function-
+//First access html elements
 
-//1.
-//  var add = (a = 0, b = 0) => {
-//     return a+b
+const a = document.querySelectorAll('input')[0]
+const b = document.querySelectorAll('input')[1]
+
+const add = document.querySelector('#add')
+const subtract = document.querySelector('#subtract')
+const multiply = document.querySelector('#multiply')
+const divide = document.querySelector('#divide')
+const resultBox = document.querySelector('.result')
+
+console.log(a, b)
+console.log(add)
+console.log(subtract)
+console.log(multiply)
+console.log(divide)
+console.log(resultBox)
+
+//Now numbers will enter number after that next event would be clicking on button 
+//Second Step add event listener to buttons
+
+// const addFunction = () =>{
+//     const result = parseInt(a.value) + parseInt(b.value)
+//     console.log(result)
 // }
 
-// 2. 
-// var add = (a = 0, b = 0) => a + b
-
-// console.log(add(10,20))
+// add.addEventListener('click', addFunction)
 
 
-//3.
-// const greet = name => 'Hi!' + name
+//Now we've result, display it.
+//Individual callback function for each operation.
 
-// console.log(greet('Palak'))
+const sum = () =>{
+    const result = parseInt(a.value) + parseInt(b.value)
+    resultBox.innerHTML = result
+}
 
-
-
-
-//CallBack Functions
-var arr = ['My', 'Name', 'is', 'StarLight']
-
-//To iterate - for loop
-// for (var i = 0; i < arr.length; i++){
-//     console.log(arr[i])
-// }
-
-// var callbackFunction = (element, index) => {
-//     console.log(element, index)
-// }
-//arr.forEach(callbackFunction)
+add.addEventListener('click', sum)
 
 
-arr.forEach((element, index) => {  -shorthand of above two steps
-    console.log(element, index)
-})
+
+const subtraction = () =>{
+    const result = parseInt(a.value) - parseInt(b.value)
+    resultBox.innerHTML = result
+}
+
+subtract.addEventListener('click', subtraction)
+
+
+
+const multiplication = () =>{
+    const result = parseInt(a.value) * parseInt(b.value)
+    resultBox.innerHTML = result
+}
+
+multiply.addEventListener('click', multiplication)
+
+
+const division = () =>{
+    const result = parseInt(a.value) / parseInt(b.value)
+    resultBox.innerHTML = result
+}
+
+divide.addEventListener('click', division)
+
+
