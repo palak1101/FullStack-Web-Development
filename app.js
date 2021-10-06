@@ -1,34 +1,17 @@
+var body = document.querySelector('body')
 
-
-// by id selector
 var heading = document.getElementById('heading')
-//console.log(heading)
-// console.log(typeof heading)
-heading.innerHTML = "Hi from Starlight"  //allows you to modify content of html element.
+heading.innerHTML = "I was changed by JS"
 console.log(heading)
 
 
-
-//by classname selector
-var paragraph = document.getElementsByClassName('para')
-console.log(paragraph)
-console.log(paragraph[1])
-console.log(paragraph.length)
-
-//paragraph.push("abc")
-//console.log(paragraph)
+heading.style = "color:red; font-size:3rem"
 
 
-
-//tagname selector
-var tags = document.getElementsByTagName('a')
-console.log(tags)
-
+heading.classList.add("four")
+heading.classList.remove('one')
+console.log(heading.classList)
 
 
-//query selector
-var query1 = document.querySelector('#heading')
-console.log(query1)
+body.classList.add('dark')
 
-var query2 = document.querySelector('.para')
-console.log(query2)
