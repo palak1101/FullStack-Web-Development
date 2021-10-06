@@ -1,25 +1,34 @@
-// document. -object
 
-// var heading = document.getElementById('heading')
-// console.log(heading)     you're tring to access element that hasn't been declared before script tag, hence it couldn't recognize it.
 
-// var heading = document.getElementById('heading')
-// console.log(heading)
-// heading.innerHTML = "Hi from JS"
-// console.log(typeof heading) 
-
+// by id selector
 var heading = document.getElementById('heading')
-var para = document.getElementsByClassName('para')
-var tags = document.getElementsByTagName('a')
-var query = document.querySelector('#heading')
-
+//console.log(heading)
+// console.log(typeof heading)
+heading.innerHTML = "Hi from Starlight"  //allows you to modify content of html element.
 console.log(heading)
-console.log(para)
-console.log(para.length)
-console.log(para[0])
-console.log(para[1])
+
+
+
+//by classname selector
+var paragraph = document.getElementsByClassName('para')
+console.log(paragraph)
+console.log(paragraph[1])
+console.log(paragraph.length)
+
+//paragraph.push("abc")
+//console.log(paragraph)
+
+
+
+//tagname selector
+var tags = document.getElementsByTagName('a')
 console.log(tags)
-console.log(query)
 
-//para.push('star')
 
+
+//query selector
+var query1 = document.querySelector('#heading')
+console.log(query1)
+
+var query2 = document.querySelector('.para')
+console.log(query2)
