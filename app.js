@@ -1,94 +1,42 @@
-const input1 = document.querySelectorAll('input')[0]
-const input2 = document.querySelectorAll('input')[1]
+// Array Methods -
 
-const add = document.querySelector('#add')
-const subtract = document.querySelector('#subtract')
-const multiply = document.querySelector('#multiply')
-const divide = document.querySelector('#divide')
-const resultbox = document.querySelector('.result')
+var arr = [1, 2, 3, 4, 5]
+
+//1.
+arr.unshift(6)
+console.log(arr)
+
+//2.
+arr.shift()
+console.log(arr)
 
 
-//console.log(input1, input2, add, subtract, multiply, divide)
+//3. To remove any element from between-
+arr.splice(1, 2)
+console.log(arr)
 
-// var sum = () => {
-//     const result = ( parseInt(input1.value) + parseInt(input2.value))
-//     resultbox.innerHTML = result
+
+//4.
+arr.push(7)
+console.log(arr)
+
+//5. It does operation on original array and return a new array.
+var new_arr = arr.slice(2, 5)
+console.log(new_arr)
+
+//6. An array that contains even nums. of original array - Filter method.
+var arr1 = [1, 2, 3, 4]
+var arr2 = []
+
+// for(var i=0; i<arr1.length; i++){
+//     if(arr1[i] % 2 === 0)
+//     arr2.push(arr1[i])
 // }
 
-// add.addEventListener('click', () => {
-//     const result = ( parseInt(input1.value) + parseInt(input2.value))
-//     resultbox.innerHTML = result
-// })
-
-
-// subtract.addEventListener('click', () => {
-//     const result = ( parseInt(input1.value) - parseInt(input2.value))
-//     resultbox.innerHTML = result
-// })
-
-
-// multiply.addEventListener('click', () => {
-//     const result = ( parseInt(input1.value) * parseInt(input2.value))
-//     resultbox.innerHTML = result
-// })
-
-
-// divide.addEventListener('click', () => {
-//     const result = ( parseInt(input1.value) / parseInt(input2.value))
-//     resultbox.innerHTML = result
-// })
-
-
-
-// Switch case for calculator operation
-
-const calculate = (event, operation) => {
-    switch (operation) {
-        case "add":
-            resultbox.innerHTML = parseInt(input1.value) + parseInt(input2.value)
-            break
-        
-            case "subtract":
-                resultbox.innerHTML = parseInt(input1.value) - parseInt(input2.value)
-                break
-            
-
-            case "multiply":
-                resultbox.innerHTML = parseInt(input1.value) * parseInt(input2.value)
-                break
-
-
-            case "divide":
-                resultbox.innerHTML = parseInt(input1.value) / parseInt(input2.value)
-                break
-
-        
-    }
-}
-
-
-
-
-add.addEventListener('click', (event) => {
-    calculate(event, 'add')
+var arr2 = arr1.filter((element, index) => {
+    //console.log(element, index)
+    if(element % 2 === 0)
+    return true
 })
 
-subtract.addEventListener('click', (event) => {
-    calculate(event, 'subtract')
-})
-
-multiply.addEventListener('click', (event) => {
-    calculate(event, 'multiply')
-})
-
-divide.addEventListener('click', (event) => {
-    calculate(event, 'divide')
-})
-
-
-
-
-
-
-
-
+console.log(arr2)
