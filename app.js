@@ -1,66 +1,94 @@
-//First access html elements
-
-const a = document.querySelectorAll('input')[0]
-const b = document.querySelectorAll('input')[1]
+const input1 = document.querySelectorAll('input')[0]
+const input2 = document.querySelectorAll('input')[1]
 
 const add = document.querySelector('#add')
 const subtract = document.querySelector('#subtract')
 const multiply = document.querySelector('#multiply')
 const divide = document.querySelector('#divide')
-const resultBox = document.querySelector('.result')
+const resultbox = document.querySelector('.result')
 
-console.log(a, b)
-console.log(add)
-console.log(subtract)
-console.log(multiply)
-console.log(divide)
-console.log(resultBox)
 
-//Now numbers will enter number after that next event would be clicking on button 
-//Second Step add event listener to buttons
+//console.log(input1, input2, add, subtract, multiply, divide)
 
-// const addFunction = () =>{
-//     const result = parseInt(a.value) + parseInt(b.value)
-//     console.log(result)
+// var sum = () => {
+//     const result = ( parseInt(input1.value) + parseInt(input2.value))
+//     resultbox.innerHTML = result
 // }
 
-// add.addEventListener('click', addFunction)
+// add.addEventListener('click', () => {
+//     const result = ( parseInt(input1.value) + parseInt(input2.value))
+//     resultbox.innerHTML = result
+// })
 
 
-//Now we've result, display it.
-//Individual callback function for each operation.
+// subtract.addEventListener('click', () => {
+//     const result = ( parseInt(input1.value) - parseInt(input2.value))
+//     resultbox.innerHTML = result
+// })
 
-const sum = () =>{
-    const result = parseInt(a.value) + parseInt(b.value)
-    resultBox.innerHTML = result
+
+// multiply.addEventListener('click', () => {
+//     const result = ( parseInt(input1.value) * parseInt(input2.value))
+//     resultbox.innerHTML = result
+// })
+
+
+// divide.addEventListener('click', () => {
+//     const result = ( parseInt(input1.value) / parseInt(input2.value))
+//     resultbox.innerHTML = result
+// })
+
+
+
+// Switch case for calculator operation
+
+const calculate = (event, operation) => {
+    switch (operation) {
+        case "add":
+            resultbox.innerHTML = parseInt(input1.value) + parseInt(input2.value)
+            break
+        
+            case "subtract":
+                resultbox.innerHTML = parseInt(input1.value) - parseInt(input2.value)
+                break
+            
+
+            case "multiply":
+                resultbox.innerHTML = parseInt(input1.value) * parseInt(input2.value)
+                break
+
+
+            case "divide":
+                resultbox.innerHTML = parseInt(input1.value) / parseInt(input2.value)
+                break
+
+        
+    }
 }
 
-add.addEventListener('click', sum)
 
 
 
-const subtraction = () =>{
-    const result = parseInt(a.value) - parseInt(b.value)
-    resultBox.innerHTML = result
-}
+add.addEventListener('click', (event) => {
+    calculate(event, 'add')
+})
 
-subtract.addEventListener('click', subtraction)
+subtract.addEventListener('click', (event) => {
+    calculate(event, 'subtract')
+})
+
+multiply.addEventListener('click', (event) => {
+    calculate(event, 'multiply')
+})
+
+divide.addEventListener('click', (event) => {
+    calculate(event, 'divide')
+})
 
 
 
-const multiplication = () =>{
-    const result = parseInt(a.value) * parseInt(b.value)
-    resultBox.innerHTML = result
-}
-
-multiply.addEventListener('click', multiplication)
 
 
-const division = () =>{
-    const result = parseInt(a.value) / parseInt(b.value)
-    resultBox.innerHTML = result
-}
 
-divide.addEventListener('click', division)
 
 
