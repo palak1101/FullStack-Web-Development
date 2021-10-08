@@ -1,42 +1,81 @@
-// Array Methods -
+// let and var both are variables, gets reassigned.
+let a = 5
+var b = 89
 
-var arr = [1, 2, 3, 4, 5]
+console.log(a, b)
 
-//1.
-arr.unshift(6)
-console.log(arr)
-
-//2.
-arr.shift()
-console.log(arr)
+a = 12
+b=23
+console.log(a, b)
 
 
-//3. To remove any element from between-
-arr.splice(1, 2)
-console.log(arr)
+// Difference between let and var?
+//let = local scope & var = global scope
+if(true){
+    var Name = "Star"
+    console.log(Name)
+}
+
+console.log(Name)
 
 
-//4.
-arr.push(7)
-console.log(arr)
 
-//5. It does operation on original array and return a new array.
-var new_arr = arr.slice(2, 5)
-console.log(new_arr)
+if(true){
+    let Name = "Star"
+    console.log(Name)
+}
 
-//6. An array that contains even nums. of original array - Filter method.
-var arr1 = [1, 2, 3, 4]
-var arr2 = []
+console.log(Name)
 
-// for(var i=0; i<arr1.length; i++){
-//     if(arr1[i] % 2 === 0)
-//     arr2.push(arr1[i])
-// }
 
-var arr2 = arr1.filter((element, index) => {
-    //console.log(element, index)
-    if(element % 2 === 0)
-    return true
-})
+// example-2
+for(let i=0; i<10; i++){
+    console.log("loop ran")
+}
 
-console.log(arr2)
+console.log(i)
+
+
+// example-3 (Scopes can be nested)
+if(true){
+    var Name = "Light"
+    if(true){
+        console.log(Name)
+    }
+}
+
+// -> You can access parent scope within child but not vice-versa.
+if(true){
+    console.log(Name)
+    if(true){
+        var Name = "Light"
+    }
+}
+
+
+// example- 4
+// In case of function it is different - there is only local scope whether you use - var, let or const.
+
+const print = () => {
+    var Name = "Ferrari"
+    return Name
+}
+
+print()
+console.log(Name)
+
+
+//-> Nested scope in function works.
+const print = () =>{
+    var Name = "Moon"
+    if (true){
+        console.log(Name)
+    }
+
+    return Name
+}
+
+print()
+
+
+
