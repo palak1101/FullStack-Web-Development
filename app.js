@@ -1,44 +1,47 @@
-// Promise
+// To display fetched data-
 
-let value = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve("Hello!")
-    }, 4000)
-})
-
-console.log(value)
-
-setTimeout(() => {
-    console.log(value)
-}, 5000)
+const table = document.querySelector('table')
+console.log(table)
 
 
-// Fetch API-
-
-// 1.
-var response = fetch('https://jsonplaceholder.typicode.com/users')
-console.log(data)
-
-setTimeout(() => {
-    console.log(response)
-    const data = response.json()
-    console.log(response)
-}, 2000)
+fetch("https://jsonplaceholder.typicode.com/users")
+    .then(res => res.json())
+    .then(data => {
+        console.log(data)
+        data.forEach((user) => {
+            table.appendChild(createRow(user))
+        }) 
+        
+    })
 
 
-// 2.
-var response = fetch('https://jsonplaceholder.typicode.com/users').then(res => {
-    let parsedData = res.json()
-    console.log(parsedData)
-    return(parsedData)
-}).then(actual_data => {
-    console.log(actual_data)
-})
+const createRow = (user) =>{
+    let newRow = document.createElement('tr')
+    let element = `
+    <td>${user.id}</td>
+    <td>${user.name}</td>
+    <td>${user.email}</td>
+    <td>${user.username}</td>`
+    
+    newRow.innerHTML = element
+    return newRow
+}
 
 
-// 3.
-var response = fetch('https://jsonplaceholder.typicode.com/users').then(res => {
-    return res.json()
-}).then(actual_data => {
-    console.log(actual_data)
-})
+// fetch("https://jsonplaceholder.typicode.com/users")
+//     .then(res => res.json())
+//     .then(data => {
+//         console.log(data)
+//         data.forEach((user) => {
+//             let newRow = document.createElement('tr')
+//             let element = `
+//             <td>${user.id}</td>
+//             <td>${user.name}</td>
+//             <td>${user.email}</td>
+//             <td>${user.username}</td>`
+
+//             newRow.innerHTML = element
+//             table.appendChild(newRow)
+//         } ) 
+        
+//     })
