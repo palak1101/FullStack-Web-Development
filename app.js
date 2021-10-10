@@ -1,69 +1,44 @@
-// This : points to window object => parent object right now it is window that we're seeing (chrome's window.
-console.log(this.alert("Hi!"))
+// Promise
 
-//Create an object and add properties and methods to object.
-let manufacturer = "Ferrari"
+let value = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Hello!")
+    }, 4000)
+})
 
-let car = {
-    name: "C-Class",
-    manufacturer: "Mercedes",
-    print: function () {
-        console.log(this)
-        let manufacturer = "BMW"
-        console.log(manufacturer)
-    }
-}
+console.log(value)
 
-car.print()
-
-console.log(car)
-console.log(typeof car)
-
-console.log(car.name)
-console.log(car.manufacturer)
-console.log(car)
+setTimeout(() => {
+    console.log(value)
+}, 5000)
 
 
-//Q) How can methods access object properties then?
-let car = {
-    name: "C-Class",
-    manufacturer: "Mercedes",
-    print: function () {
-        console.log(this)
-        console.log(car.manufacturer, car.name)
-        console.log(this.name + " was manufactured by " + this.manufacturer)
-        console.log(`${this.name}  was created by ${this.manufacturer}`)
-        
-    }
-}
+// Fetch API-
 
-car.print()
+// 1.
+var response = fetch('https://jsonplaceholder.typicode.com/users')
+console.log(data)
+
+setTimeout(() => {
+    console.log(response)
+    const data = response.json()
+    console.log(response)
+}, 2000)
 
 
-// 'this' keyword doesn't work with object's arrow function-
-let car = {
-    name: "C-Class",
-    manufacturer: "Mercedes",
-    print: () => {
-        console.log(this)
-        //console.log(car.manufacturer, car.name)
-        //console.log(this.name + " was manufactured by " + this.manufacturer)
-        console.log(car.name + " was created by " + car.manufacturer)
-        
-    }
-}
-
-car.print()
+// 2.
+var response = fetch('https://jsonplaceholder.typicode.com/users').then(res => {
+    let parsedData = res.json()
+    console.log(parsedData)
+    return(parsedData)
+}).then(actual_data => {
+    console.log(actual_data)
+})
 
 
-// Object Methods-
-//Q) What is 'Object' object here? - a global object and created object are subset of this Object.
-console.log(car)
-
-
-console.log(Object.keys(car))
-console.log(Object.values(car))
-console.log(Object.hasOwnProperty('name'))
-
-
-
+// 3.
+var response = fetch('https://jsonplaceholder.typicode.com/users').then(res => {
+    return res.json()
+}).then(actual_data => {
+    console.log(actual_data)
+})
