@@ -1,13 +1,14 @@
-//console.log(module)
+//const stuff = require('./functions')
 
-//console.log((require('./index.js')))
+//const { multiply, divide } = require("./functions")
 
-// 1. Access exports object of a module or whole file from another js file using require built-in method.
-const stuff = require('./index')
-console.log(stuff)
+//console.log(stuff)
 
-//console.log(something)
+// To run individual function from imported file-
+const {function1, subtract, multiply, divide, message} = require('./functions')
 
-
-
-
+function1()
+subtract()
+multiply()
+divide()
+console.log(message)
