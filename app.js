@@ -1,14 +1,13 @@
-//const stuff = require('./functions')
+const button = document.querySelector('button')
+const input = document.querySelector('input')
+const div = document.querySelector('div')
 
-//const { multiply, divide } = require("./functions")
 
-//console.log(stuff)
+const arr = [1, 2, 3, 4, 5]
+const val = JSON.stringify(arr)  //converts array/anything to string
+localStorage.setItem('val', JSON.stringify(arr))
+console.log(val)
+console.log(arr)
 
-// To run individual function from imported file-
-const {function1, subtract, multiply, divide, message} = require('./functions')
-
-function1()
-subtract()
-multiply()
-divide()
-console.log(message)
+console.log(localStorage.getItem('val'))
+console.log(JSON.parse(localStorage.getItem('val')))
