@@ -1,20 +1,28 @@
-// I. Module - path
+// II. Module- File System
 
-const path = require('path')
-//console.log(path)
+const fs = require('fs')
+const { text } = require('stream/consumers')
+
+//console.log(fs)
 
 //1.
-console.log(path.resolve('./utils.js'))   //converts relative to absolute path from root of utils.js file
-console.log(path.relative('/', "./utils.js"))  // absolute path using relative
+fs.readFile('./text.txt', (error, data) => {
+    if(error) console.log(error)
+    else console.log(data.toString())        // 'utf8' in parameter
+})
 
-console.log(path.relative('./GIT CONTRIBUTE', "./GIT CONTRIBUTE/FullStack-Track/utils.js"))  //converts absolute path to relative
+console.log("I'm random log")
+
+//console.log(fs.readFileSync('./text.txt', 'utf8'))
+
 
 //2.
-console.log(path.extname('./app.js'))  //shows extension name
+fs.writeFile('./text.txt', "Happy", (error, data) => {
+    if(error) console.log(error)
+    else console.log(data)        
+})
 
-//3.
-console.log(path.dirname('./FullStack-Track/utils.js'))  // will give ypu parent directory
-
-//4.
-console.log(__dirname) //gives current directory in which your file you're using right now.
-console.log(path.join(__dirname, 'app.js'))  //joins file with current directory.
+//3. To append in a file-
+fs.writeFile('./text.txt', `Append me ${fs.readFileSync('./text.txt', 'utf8')}`, (error) => {
+    if (error) console.log(error)
+})
