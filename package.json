@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/palak1101/FullStack-Web-Development#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "nodemon": "^2.0.13"
   }
 }
