@@ -8,9 +8,15 @@ const path = require('path')
 
 const server = http.createServer((request, response) => {
     //console.log(request.method)
-    const markup = fs.readFileSync(path.resolve('./index.html'))
-    response.write(markup)
-    response.end()
+    const {url} = request
+    if(url == '/login'){
+        response.write('<h1> Login Page </h1>')
+        response.end()
+    }
+    if(url == '/signup'){
+        response.write('<h1> Signup Page </h1>')
+        response.end()
+    }
 })
 
 //console.log(server)
