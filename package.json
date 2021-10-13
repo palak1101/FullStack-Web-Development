@@ -1,0 +1,25 @@
+{
+  "name": "fullStack-track",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/palak1101/FullStack-Web-Development.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/palak1101/FullStack-Web-Development/issues"
+  },
+  "homepage": "https://github.com/palak1101/FullStack-Web-Development#readme",
+  "dependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
