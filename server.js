@@ -1,46 +1,51 @@
 
-// creating server using express-
+// create a server using express-
 
 const express = require('express')
-console.log(express)
-const PORT = 3000
 const app = express()
+//console.log(express)
 
-// app.get('/', (req, res) => {
-//     res.send('Server up and running')
-// })
+const PORT = 3000
 
-
-//1. If a request is legit that means get request which we have allowed - that means from thunderclient but not chrome.
-// app.get('/', (req, res) => {
-//     console.log(req)
-//     if(req.headers['user-agent'] ==="Thunder Client (https://www.thunderclient.io)") res.send('GET')
-//     else res.send("BLOCKED")
-// })
-
-
-
-//2. checks if request is from thunder client if yes moves it ahead to callback otherwise show blocked.
-const verify = (req, res, next) => {
-    console.log(req)
-    if(req.headers['user-agent'] ==="Thunder Client (https://www.thunderclient.io)") next()
-    else res.send("BLOCKED")
-}
-
-app.get('/', verify, (req, res) => {
-    res.send("VERIFIED")
+app.get('/', (req, res) => {
+    //console.log(req.url)
+    res.send("Server up and running")
 })
 
 
-
-// app.post('/', (req, res) => {
-//     res.send("Login form")
-// })
-
-// app.patch('/', (req, res) => {
-//     res.send("Patch")
-// })
-
-app.listen(PORT, () => {
-    console.log(`Server running at PORT ${PORT}`)
+//1. post request from chrome doesn't work- because browser only sends get request
+app.post('/', (req, res) => {
+    //console.log(req.url)
+    res.send(`Login Form`)
 })
+
+app.get('/', (req, res) => {
+    //console.log(req.url)
+    res.send(`Login Form`)
+})
+
+//2. Different kind of request- with express using thunderclient works well.
+app.get('/', (req, res) => {
+    res.send(`GET`)
+})
+
+app.post('/', (req, res) => {
+    res.send(`POST`)
+})
+
+app.put('/', (req, res) => {
+    res.send(`PUT`)
+})
+
+app.patch('/', (req, res) => {
+    res.send(`PATCH`)
+})
+
+app.delete('/', (req, res) => {
+    res.send(`DELETE`)
+})
+
+
+app.listen(3000, () => {
+    console.log(`Server listening at PORT ${PORT}`)
+}) 
