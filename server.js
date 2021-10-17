@@ -7,43 +7,35 @@ const app = express()
 
 const PORT = 3000
 
+
+// 1. Headers of request contain additional info about request.
 app.get('/', (req, res) => {
-    //console.log(req.url)
-    res.send("Server up and running")
+    console.log(req.headers)
+    res.send("GET")
 })
 
 
-//1. post request from chrome doesn't work- because browser only sends get request
-app.post('/', (req, res) => {
-    //console.log(req.url)
-    res.send(`Login Form`)
-})
+//2. Basic security to check from where(user-agent) request is coming?
 
 app.get('/', (req, res) => {
-    //console.log(req.url)
-    res.send(`Login Form`)
+    console.log(req.headers['user-agent'])
+    if(req.headers['user-agent'] === "Thunder Client (https://www.thunderclient.io)") res.send("GET")
+    else res.send("BLOCKED")
 })
 
-//2. Different kind of request- with express using thunderclient works well.
-app.get('/', (req, res) => {
-    res.send(`GET`)
+
+//3. Middleware - a more logical way for security check.
+
+const verify = (req, res, next) => {
+    if(req.headers['user-agent'] === "Thunder Client (https://www.thunderclient.io)") next()
+    else res.send("BLOCKED")
+}
+
+app.get('/', verify, (req, res) => {
+    //console.log(req)
+    res.send("Hi!")
 })
 
-app.post('/', (req, res) => {
-    res.send(`POST`)
-})
-
-app.put('/', (req, res) => {
-    res.send(`PUT`)
-})
-
-app.patch('/', (req, res) => {
-    res.send(`PATCH`)
-})
-
-app.delete('/', (req, res) => {
-    res.send(`DELETE`)
-})
 
 
 app.listen(3000, () => {
