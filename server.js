@@ -1,85 +1,36 @@
 // BASIC ECOMMERCE BACKEND
 
-// create a server using express-
-
-const { json } = require('express')
 const express = require('express')
+const database = require('./database/db')
+const categoryRoutes = require('./routes/categoryRoutes')
+const productRoutes = require('./routes/productRoutes')
 const app = express()
 
+app.use(express.json())
 //console.log(express)
+
 const PORT = 3000
 
-app.use(express.json())
-
-const token = "TOP_SECRET"
 
 
-//Array as Database
-let products = [{name: "iPhone12 Case", price: '999'}, {name: "iPhone13 Case", price: '1199'}, {name: "iPhone13 Pro Case", price: '1499'}]
+//console.log(categoryRoutes.stack)
+app.use('/category', categoryRoutes)
+app.use('/products', productRoutes)
 
 
 
 
-//middleware - server validation
-//1.
-const validator = (req, res, next) => {
-    const {name, price} = req.body
 
-    if (!name || !price) res.json({error: "validation failed!"})
-    else next()
-}
-
-//2.
-const isAuthorized = (req, res, next) => {
-    if(req.headers.authorisation === token){
-        next()
-    }
-    else res.json({error: "UNAUTHORIZED"})
-}
-
-
-
-
-//-----------------------------PUBLIC ROUTE--------------------------------
-//This route is a get route to send products-
-app.get('/products', (req, res) => {
-    res.json({products})
-})
-
-
-
-
-//-----------------------------PRIVATE ROUTE--------------------------------
-app.post('/products/add', isAuthorized, validator, (req, res) => {
-    const {name, price} = req.body   //destructure
-    
-    const newProduct = {
-        name,
-        price
-    }
-    // const newProduct = {
-    //     name: req.body.name,
-    //     price: req.body.price
-    // }
-    products.push(newProduct)
-    res.send("product added")
-})
-
-//-----------------------------AUTHENTICATION FOR ACCESSING PRIVATE ROUTE--------------------------------
-
-app.post('/auth', (req, res) => {
-    const {email, password} = req.body
-    if (email === "admin@mail.com" && password === "password1") 
-    res.send({token})
-    else{
-        res.send({message: "UNAUTHORIZED"})
-    }
-})
-
-
-
-
+//Server doesn't crash since it get some kind of response.
+// app.get('/', (req, res) => {
+//     try{
+//         console.log(document)
+//     }
+//     catch(error){
+//         res.status(400).send(error.message)
+//     }
+// })
 
 app.listen(PORT, () => {
-    console.log(`Server listening at PORT ${PORT}`)
+    console.log(`Server listening at PORT: ${PORT}`)
 })
