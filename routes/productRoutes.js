@@ -63,6 +63,55 @@ router.post('/add', (req, res) => {
 
 
 
+// DELETE Request to delete categories-
+router.delete('/delete/:id', (req, res) => {
+    try {
+
+        const {id} = req.params
+        const newProducts = database.products.filter(item => item.id !== id)
+        database.products = newProducts
+
+        res.json({
+            products: newProducts,
+            message: "Successfully removed product",
+            status: "SUCCESS"
+        })
+    } catch (error) {
+        res.json({
+            products: [],             
+            message: error.message,
+            status: "FAILED"
+        })
+    }  
+})
+
+
+
+//PUT Request to update category properties-
+router.put('/update/:id', (req, res) => {
+    try {
+
+        const {id} = req.params
+        const {newName, newPrice} = req.body
+        let updateProduct = database.products.find(item => item.id === id)
+        const index = database.products.indexOf(updateProduct)
+        if(updateProduct) database.products[index].name = newName , database.products[index].price = newPrice
+        else console.log("Name already exists!!")
+
+        res.json({
+            products: database.products,
+            message: "Successfully updated product",
+            status: "SUCCESS"
+        })
+    } catch (error) {
+        res.json({
+            products: [],             
+            message: error.message,
+            status: "FAILED"
+        })
+    }  
+})
+
 
 
 

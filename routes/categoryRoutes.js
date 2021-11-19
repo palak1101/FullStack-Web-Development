@@ -8,13 +8,13 @@ const router = express.Router()
 // GET Request from user to read categories-
 router.get('/all', (req, res) => {
     try {
-        res.status(200).json({
+        res.json({
             categories: database.categories,
             message: "Successfully fetched categories",
             status: "SUCCESS"
         })
     } catch (error) {
-        res.status(200).json({
+        res.json({
             categories: [],             //here, we're sending data as empty array so that frontend doesn't crash, cannot read property error if fetched data = null.
             message: error.message,
             status: "FAILED"
@@ -81,32 +81,30 @@ router.delete('/delete/:id', (req, res) => {
 
 
 
-// PUT Request to update category properties-
-// router.put('/update/:name', (req, res) => {
-//     try {
+//PUT Request to update category properties-
+router.put('/update/:id', (req, res) => {
+    try {
 
-//         const {name} = req.params
-//         // let element = database.categories.find(item => item.id === id)
-//         // const index = database.categories.indexOf(element)
-//         // database.categories.splice(index, 1)
+        const {name} = req.params
+        const {newName} = req.body
+        let update = database.categories.find(item => item.name === name)
+        const index = database.categories.indexOf(update)
+        if(update) database.categories[index].name = newName
+        else console.log("Name already exists!!")
 
-//         const newCategories = database.categories.filter(item => item.name !== name)
-//         database.categories = newCategories
-
-//         res.json({
-//             categories: newCategories,
-//             message: "Successfully updated category",
-//             status: "SUCCESS"
-//         })
-//     } catch (error) {
-//         res.status(200).json({
-//             categories: [],             
-//             message: error.message,
-//             status: "FAILED"
-//         })
-//     }  
-// })
-
+        res.json({
+            categories: database.categories,
+            message: "Successfully updated category",
+            status: "SUCCESS"
+        })
+    } catch (error) {
+        res.json({
+            categories: [],             
+            message: error.message,
+            status: "FAILED"
+        })
+    }  
+})
 
 
 
