@@ -1,17 +1,21 @@
-console.log(React, ReactDOM)
+//console.log(React, ReactDOM)
 
 const container = document.getElementById('app')
+//console.log(container)
 
-console.log(container)
 
-//const heading = React.createElement('h2', {}, 'This is a heading')
+//1. To create multiple children of main div pass an array[].
 
-const content = React.createElement('div', {}, [
+const content = React.createElement('ul', {}, [
+    React.createElement('li', {}, `Item-1`),
+    React.createElement('li', {}, `Item-2`),
+    React.createElement('ul', {}, [
+        React.createElement('li', {}, "content-A"),
+        React.createElement('li', {}, "content-B"),
+        React.createElement('li', {}, "content-C"),
+        React.createElement('li', {}, "content-D"),
+    ])
+])
 
-    React.createElement('h1', {}, `I'm a heading`),
-    React.createElement('p', {}, `I'm paragraph 1`),
-
-]
-)
 
 ReactDOM.render(content, container)
