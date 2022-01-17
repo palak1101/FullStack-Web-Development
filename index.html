@@ -20,89 +20,505 @@
 
 
     <title>BootStrap</title>
-    <style>
-        div {
-            min-height: 50px;
-        }
-
-        div.row {
-            background-color: black;
-        }
-
-        div.row div {
-            background-color: rgb(253, 241, 72);
-            /* margin: 10px; */
-        }
-    </style>
 
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!------------Navbar------------>
+    <div class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark text-light py-3">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <a href="#" class="navbar-brand">DART</a>
+            <button data-bs-toggle="collapse" data-bs-target="#navItem" class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon">
+
+                </span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <div class="collapse navbar-collapse" id="navItem">
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a href="#" class="nav-link">Buy</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
+                        <a href="#" class="nav-link">Sell</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        <a href="#" class="nav-link">Discover</a>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
             </div>
         </div>
-    </nav>
-
-    <br><br> 
-    
-    <div class="container-lg bg-primary p-2">
-        <div class="w-25 bg-danger m-2 d-none d-md-inline-block"></div>
-        <div class="w-25 bg-danger m-2 d-inline-block"></div>
     </div>
 
-    <br><br>
 
-    <div class="container-lg">
-        <div class="row">
-            <div class="col-sm-1 border border-4 border-dark">Column</div>
-            <div class="col-sm-11 border border-4 border-dark">Column</div>
-            <div class="col-sm-3 border border-4 border-dark">Column</div>
-            <div class="col-sm-9 border border-4 border-dark">Column</div>
-            <div class="col-sm-5 border border-4 border-dark">Column</div>
-            <div class="col-sm-7 border border-4 border-dark">Column</div>
-            <div class="col-sm-2 border border-4 border-dark">Column</div>
-            <div class="col-sm-10 border border-4 border-dark">Column</div>
+    <!------------Jumbotron------------>
+    <section class="bg-white text-dark p-5 mt-5 mt-md-0 text-center text-sm-start">
+        <div class="container">
+
+            <div class="d-flex align-items-center justify-content-between">
+                <div>
+                    <h1>Find art you <span class="text-danger">Love ❤</span></h1>
+                    <p class="my-4">
+                        At Dart , we make it our mission to help you discover and buy from the best emerging artists
+                        around the world. Dart is your portal to thousands of original works by today’s top artists.
+                    </p>
+                    <button data-bs-toggle="modal" data-bs-target="#enquire" class="btn btn-lg btn-primary">Enquire
+                        Now</button>
+                </div>
+
+                <img class="w-50 d-none d-sm-block"
+                    src="https://images.unsplash.com/photo-1562963527-ab1b093b0ff7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=948&q=80"
+                    alt="">
+            </div>
 
         </div>
+    </section>
+
+
+    <!------------Modal------------>
+    <div class="modal fade" id="enquire">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="enrollLabel">Enrollment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p class="lead">Fill out this form and we will get back to you</p>
+                    <form>
+                        <div class="mb-3">
+                            <label for="firstname" class="col-form-label">First Name :</label>
+                            <input type="text" id="firstname" class="form-control" required>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="lastname" class="col-form-label">Last Name :</label>
+                            <input type="text" id="lastname" class="form-control" required>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="email" class="col-form-label">Email :</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="phone" class="col-form-label">Phone :</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+
+            </div>
+        </div>
     </div>
+
+
+    <!------------Newsletter-Signup------------>
+    <section class="bg-dark text-light p-5">
+        <div class="container">
+            <div class="d-md-flex justify-content-between align-items-center">
+
+                <h3 class="mb-3 mb-md-0">Sign Up For Our Newsletter</h3>
+
+                <div class="input-group news-input">
+                    <input type="text" class="form-control" placeholder="Enter Email">
+                    <button class="btn btn-primary btn-lg" type="button">Submit</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!----------------Carousel------------->
+    <div class="my-5 text-center container bg-dark text-white">
+
+
+        <div class="mb-3 text-left">
+            <h2>Featured Art</h2>
+        </div>
+
+
+        <!--Carousel-Start-->
+
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active" data-bs-interval="10000">
+
+
+                    <div class="row">
+                        <div class="col">
+                            <img width="300" height="200px"
+                                src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGFydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                class="mb-5 border" alt="">
+                        </div>
+
+
+                        <div class="col">
+                            <img width="300" height="200px"
+                                src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                                class="mb-5 border" alt="">
+                        </div>
+
+                        <div class="col">
+                            <img width="300" height="200px"
+                                src="https://images.unsplash.com/photo-1482160549825-59d1b23cb208?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGFydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                class="mb-5 border" alt="">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item" data-bs-interval="10000">
+
+                    <div class="row">
+                        <div class="col">
+                            <img width="300" height="200px"
+                                src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGFydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                class="mb-5 border" alt="">
+                        </div>
+
+
+                        <div class="col">
+                            <img width="300" height="200px"
+                                src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                                class="mb-5 border" alt="">
+                        </div>
+
+                        <div class="col">
+                            <img width="300" height="200px"
+                                src="https://images.unsplash.com/photo-1482160549825-59d1b23cb208?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGFydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                class="mb-5 border" alt="">
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="carousel-item" data-bs-interval="10000">
+
+                    <div class="row">
+                        <div class="col">
+                            <img width="300" height="200px"
+                                src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGFydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                class="mb-5 border" alt="">
+                        </div>
+
+
+                        <div class="col">
+                            <img width="300" height="200px"
+                                src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8YXJ0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                                class="mb-5 border" alt="">
+                        </div>
+
+                        <div class="col">
+                            <img width="300" height="200px"
+                                src="https://images.unsplash.com/photo-1482160549825-59d1b23cb208?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGFydHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                class="mb-5 border" alt="">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!------------Learn-Section------------>
+    <section class="bg-dark text-light p-0 p-md-5">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-md p-5">
+                    <h2>Buy Paintings</h2>
+
+                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum earum voluptates
+                        fugit! Quidem, dolorum ducimus blanditiis quia iusto odio eveniet, veritatis natus architecto
+                        quas praesentium doloremque, commodi quos facere.</p>
+
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo a laboriosam, alias optio
+                        perspiciatis nesciunt? Ipsam dolor non, nihil praesentium similique laudantium vero. Modi iste
+                        nemo unde.</p>
+
+                    <a href="#" class="btn btn-light mt-3"><i class="bi bi-chevron-right"></i> Read More </a>
+                </div>
+
+                <div class="col-md">
+                    <img src="https://images.unsplash.com/photo-1627843240167-b1f9d28f732e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=2232&amp;q=80"
+                        class="img-fluid" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!------------Accordian------------>
+    <section class="questions p-5">
+        <div class="container">
+            <div class="ques">
+
+                <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                aria-controls="flush-collapseOne">
+                                How do you ship?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex
+                                animi ducimus cumque veniam voluptas neque adipisci earum obcaecati molestiae hic, ab,
+                                autem fugiat delectus exercitationem nobis laboriosam, sit beatae tempore quasi vel odit
+                                officia. Placeat esse similique dolorum sint voluptatum laborum. Minima veritatis
+                                molestiae explicabo tempore ipsum fugiat quisquam omnis? Expedita quidem consequuntur
+                                ipsa suscipit quos adipisci velit mollitia eos.</div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                aria-controls="flush-collapseTwo">
+                                Where are you located?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+                                ipsum, doloribus ad commodi odio temporibus nisi qui totam nobis quisquam eligendi, quis
+                                vero! Quisquam voluptatibus molestias quos ad distinctio, cum illum corrupti libero
+                                numquam aliquam praesentium, commodi perferendis.</div>
+                        </div>
+                    </div>
+
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                aria-controls="flush-collapseThree">
+                                What happens if I don't receive my piece?
+                            </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat
+                                perferendis dolorum in ex praesentium possimus laboriosam voluptatum totam nulla
+                                quisquam molestiae reprehenderit repellendus pariatur alias incidunt corrupti earum
+                                officiis aliquam esse, adipisci eveniet deleniti laborum odit architecto? Tempore
+                                perferendis nulla, obcaecati quis sapiente voluptate quo blanditiis accusantium
+                                voluptas, odio inventore.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!------------Creators------------>
+    <section class="p-5 bg-dark">
+        <div class="container">
+
+            <h2 class="text-center text-white">Our Curators</h2>
+            <p class="lead text-center text-white mb-5">
+                Our curators curate the best pieces from around the world to be delivered at your doorstep
+            </p>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+
+                            <img src="https://randomuser.me/api/portraits/men/4.jpg" class="rounded-circle mb-3" alt="">
+                            <h3 class="card-title mb-3">Bill Jonas</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad qui dolore distinctio quos
+                                atque
+                                maxime asperiores debitis eos.</p>
+
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+
+                            <img src="https://randomuser.me/api/portraits/women/8.jpg" class="rounded-circle mb-3"
+                                alt="">
+                            <h3 class="card-title mb-3">Jane Stewart</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad qui dolore distinctio quos
+                                atque
+                                maxime asperiores debitis eos.</p>
+
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+
+                            <img src="https://randomuser.me/api/portraits/men/19.jpg" class="rounded-circle mb-3"
+                                alt="">
+                            <h3 class="card-title mb-3">Nick Spencer</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad qui dolore distinctio quos
+                                atque
+                                maxime asperiores debitis eos.</p>
+
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+
+                            <img src="https://randomuser.me/api/portraits/women/26.jpg" class="rounded-circle mb-3"
+                                alt="">
+                            <h3 class="card-title mb-3">Kate Davis</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad qui dolore distinctio quos
+                                atque
+                                maxime asperiores debitis eos.</p>
+
+                            <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-facebook text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                            <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!----------------Contacts----------------->
+    <section class="p-5 my-0 my-md-5">
+        <div class="container">
+            <div class="row g-5">
+
+                <div class="col-md border">
+                    <h2 class="text-center mb-4">Contact Info</h2>
+
+                    <ul class="list-group list-group-flush lead">
+                        <li class="list-group-item">
+                            <span class="fw-bold">Head Office:</span> 24A CyberHub
+                        </li>
+
+                        <li class="list-group-item">
+                            <span class="fw-bold">Contact Number:</span> 011-123-456
+                        </li>
+
+                        <li class="list-group-item">
+                            <span class="fw-bold">Enrollment Email:</span> support@dart.test
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="col-md d-none d-md-block">
+                    <div class="p-3 border">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.9469851019953!2d79.07933941488552!3d21.154507985930408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c1e54b6ad66d%3A0x3e845d86099dc432!2sKasturchand%20park%20Metro%20Station!5e0!3m2!1sen!2sin!4v1628656216754!5m2!1sen!2sin"
+                            width="600" height="201" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!----------------Footer----------------->
+    <footer class="position-relative p-5 bg-dark text-white text-center">
+        <div class="container">
+
+            <p class="lead">Copyright @ 2021 | Dart</p>
+            <a href="#" class="position-absolute bottom-0 end-0 p-5">
+                <i class="bi bi-arrow-up-circle h1"></i>
+            </a>
+
+        </div>
+    </footer>
+
+
 
 </body>
 
